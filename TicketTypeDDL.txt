@@ -1,0 +1,6 @@
+﻿CREATE TABLE `TicketType` (
+  `type` varchar(45) NOT NULL,
+  `currentPrice` decimal(3,2) NOT NULL,
+  PRIMARY KEY (`type`),
+  UNIQUE KEY `currentPrice_UNIQUE` (`currentPrice`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

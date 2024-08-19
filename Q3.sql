@@ -1,0 +1,5 @@
+SELECT COUNT(type)
+FROM TicketType NATURAL JOIN Transaction NATURAL JOIN Ticket
+WHERE dateTime = 2024
+GROUP BY type
+ORDER BY ASCE;

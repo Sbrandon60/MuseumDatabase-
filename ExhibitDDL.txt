@@ -1,0 +1,5 @@
+﻿CREATE TABLE `Exhibit` (
+  `exhibitName` varchar(45) NOT NULL,
+  PRIMARY KEY (`exhibitName`),
+  UNIQUE KEY `exhibitName_UNIQUE` (`exhibitName`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

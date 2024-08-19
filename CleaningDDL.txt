@@ -1,0 +1,9 @@
+﻿CREATE TABLE `Cleaning` (
+  `empID` int NOT NULL,
+  `exhibitName` varchar(45) NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`empID`,`exhibitName`,`date`),
+  KEY `exhibitClean_idx` (`exhibitName`),
+  CONSTRAINT `empClean` FOREIGN KEY (`empID`) REFERENCES `Employee` (`empID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `exhibitClean` FOREIGN KEY (`exhibitName`) REFERENCES `Exhibit` (`exhibitName`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

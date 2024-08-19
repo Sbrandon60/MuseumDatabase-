@@ -1,0 +1,11 @@
+﻿CREATE TABLE `Transaction` (
+  `transID` int NOT NULL,
+  `dateTime` datetime NOT NULL,
+  `empId` int NOT NULL,
+  `cardNumber` int NOT NULL,
+  PRIMARY KEY (`transID`),
+  KEY `custCard_idx` (`cardNumber`),
+  KEY `empTransaction_idx` (`empId`),
+  CONSTRAINT `custCard` FOREIGN KEY (`cardNumber`) REFERENCES `CreditCard` (`cardNumber`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `empTransaction` FOREIGN KEY (`empId`) REFERENCES `Employee` (`empID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

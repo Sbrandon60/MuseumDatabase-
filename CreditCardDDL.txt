@@ -1,0 +1,7 @@
+﻿CREATE TABLE `CreditCard` (
+  `cardHolderName` varchar(45) NOT NULL,
+  `cardNumber` int NOT NULL,
+  `expDate` varchar(45) NOT NULL,
+  PRIMARY KEY (`cardNumber`),
+  UNIQUE KEY `cardNumber_UNIQUE` (`cardNumber`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

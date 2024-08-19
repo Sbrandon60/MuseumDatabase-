@@ -1,0 +1,10 @@
+﻿CREATE TABLE `Survey` (
+  `score` int DEFAULT NULL,
+  `comments` varchar(100) DEFAULT NULL,
+  `entryDate` date NOT NULL,
+  `ticketNum` int NOT NULL,
+  PRIMARY KEY (`entryDate`,`ticketNum`),
+  KEY `custTicket_idx` (`ticketNum`),
+  CONSTRAINT `customerEntry` FOREIGN KEY (`entryDate`) REFERENCES `Visitor` (`entryDate`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `custTic` FOREIGN KEY (`ticketNum`) REFERENCES `Ticket` (`ticketNo`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

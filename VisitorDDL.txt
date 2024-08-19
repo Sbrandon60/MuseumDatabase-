@@ -1,0 +1,8 @@
+﻿CREATE TABLE `Visitor` (
+  `entryDate` date NOT NULL,
+  `entryTime` time NOT NULL,
+  `ticketNum` int NOT NULL,
+  PRIMARY KEY (`entryDate`,`ticketNum`),
+  UNIQUE KEY `ticketNum_UNIQUE` (`ticketNum`),
+  CONSTRAINT `custTicket` FOREIGN KEY (`ticketNum`) REFERENCES `Ticket` (`ticketNo`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci

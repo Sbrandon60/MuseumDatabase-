@@ -1,0 +1,8 @@
+﻿CREATE TABLE `TourTraining` (
+  `empID` int NOT NULL,
+  `exhibitName` varchar(45) NOT NULL,
+  PRIMARY KEY (`empID`,`exhibitName`),
+  KEY `exhibitName_idx` (`exhibitName`),
+  CONSTRAINT `empTrain` FOREIGN KEY (`empID`) REFERENCES `Employee` (`empID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `exhibitName` FOREIGN KEY (`exhibitName`) REFERENCES `Exhibit` (`exhibitName`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
